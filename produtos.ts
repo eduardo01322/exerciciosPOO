@@ -21,6 +21,7 @@ let produto2 =  new produtos("playstation", 1500);
 let produto3 =  new produtos("xbox", 2500);
 
 console.log(produto1.Produtos());
+
 console.log(produto1.descontos(0));
 
 console.log(produto2.Produtos());
