@@ -3,24 +3,17 @@ class Estudante{
     idade:number;
     notas:number[];
  
-   
-
-
 
 constructor(nome:string, idade:number, notas:number[]){
 
 this.nome= nome;
 this.idade = idade;
 this.notas= notas;
-
 }
-
 
 Media(){
 
 let SNotas=0;
-
-
 
     for(let i=0;  i<this.notas.length; i++){
         SNotas= SNotas+this.notas[i];    
