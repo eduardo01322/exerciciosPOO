@@ -9,8 +9,8 @@ class carrinho {
     constructor() {
         this.produtos = [];
     }
-    adicionarProduto(produtos) {
-        this.produtos.push(produtos);
+    adicionarProduto(produto) {
+        this.produtos.push(produto);
     }
     listarCarrinho() {
         console.log("Meu carrinho");
@@ -27,7 +27,7 @@ class carrinho {
         for (let i = 0; i < this.produtos.length; i++) {
             soma = soma + this.produtos[i].preço;
         }
-        console.log("Sua compra é de " + (soma.toFixed(2)));
+        console.log("Sua compra é de R$ " + (soma.toFixed(2)));
     }
 }
 class loja {
@@ -46,7 +46,27 @@ class loja {
     }
     apagarEstoque(estoque) {
         this.estoque = this.estoque.filter(item => item.nome != estoque.nome);
-        return "Produto do estoque apagado";
+        return "produto removido do estoque";
+    }
+    adicionarNoCarrinho(produto) {
+        const produtoEncontrado = this.estoque.find(item => item.nome == produto.nome);
+        if (produtoEncontrado) {
+            this.carrinho.adicionarProduto(produto);
+            return "Produto adicionado ao carrinho de compras";
+        }
+        else {
+            return "Produto não encontrado no estoque";
+        }
+    }
+    removerDoCarrinho(produto) {
+        this.carrinho.apagar(produto);
+        return "Produto apagado";
+    }
+    lista() {
+        this.carrinho.listarCarrinho();
+    }
+    custo() {
+        this.carrinho.preço();
     }
 }
 const objeto1 = new produtoLoja("picanha", 13.00);
@@ -57,7 +77,6 @@ const meucarrinho = new carrinho();
 meucarrinho.adicionarProduto(objeto1);
 meucarrinho.adicionarProduto(objeto2);
 meucarrinho.adicionarProduto(objeto3);
-meucarrinho.adicionarProduto(objeto4);
 console.log(meucarrinho.listarCarrinho());
 console.log(meucarrinho.preço());
 console.log(meucarrinho.apagar(objeto2));
@@ -72,3 +91,8 @@ estoque.adicionarEstoque(objeto4);
 console.log(estoque.listarEstoque());
 console.log(estoque.apagarEstoque(objeto2));
 console.log(estoque.listarEstoque());
+console.log(estoque.adicionarNoCarrinho(objeto4));
+console.log(estoque.adicionarNoCarrinho(objeto1));
+console.log(estoque.removerDoCarrinho(objeto3));
+console.log(estoque.lista());
+console.log(estoque.custo());
