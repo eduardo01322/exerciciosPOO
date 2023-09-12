@@ -14,10 +14,8 @@ class Evento {
 class Agenda {
     private eventos: Evento[] = [];
 
+    constructor(){}
 
-    constructor() {
-
-    }
     adicionarEventos(evento: Evento) {
         this.eventos.push(evento);
     }
