@@ -30,15 +30,12 @@ class Agenda {
     }
     apagar(evento:Evento) {
         this.eventos= this.eventos.filter(item =>item.nome!= evento.nome);
-
         return "Evento apagado"
-
-
     }
 }
-const evento1 = new Evento("casamento","10","20h");
-const evento2 = new Evento("musical","04","22h");
-const evento3 = new Evento("encontro","01","23h");
+const evento1 = new Evento("hiroshima","6/8","8:15");
+const evento2 = new Evento("gemeas","11/9","8:46");
+const evento3 = new Evento("evento","23/12","16:30");
 const meusEventos = new Agenda();
 meusEventos.adicionarEventos(evento1);
 meusEventos.adicionarEventos(evento2);
