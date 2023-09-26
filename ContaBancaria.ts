@@ -67,7 +67,7 @@ class ContaPoupanca extends ContaBancaria2{
     }
 
     calcularRendimentoAnual(taxa: number): number{
-
+        
     }
 }
 
