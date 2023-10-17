@@ -51,7 +51,6 @@ const produtoDoPedido1 = new produtoPedido("X-tudo", 15)
 const produtoDoPedido2 = new produtoPedido("X-frango", 15)
 pedido1.exibirStatus();
 pedido1.adicionarProduto(produtoDoPedido1);
-console.log(pedido1.adicionarProduto(produtoDoPedido1));
 pedido1.exibirProdutosDoPedido();
 console.log(pedido1.exibirStatus());
 pedido1.atualizarStatus(StatusPedido.EmPreparo);
@@ -59,8 +58,7 @@ console.log(pedido1.exibirStatus());
 console.log("");
 pedido2.exibirStatus();
 pedido2.adicionarProduto(produtoDoPedido2);
-console.log(pedido2.adicionarProduto(produtoDoPedido2));
 pedido2.exibirProdutosDoPedido();
 console.log(pedido2.exibirStatus());
-pedido2.atualizarStatus(StatusPedido.EmPreparo);
+pedido2.atualizarStatus(StatusPedido.Entregue);
 console.log(pedido2.exibirStatus());
